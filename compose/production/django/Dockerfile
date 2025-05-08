@@ -87,7 +87,7 @@ RUN chown -R django:django ${APP_HOME}
 
 USER django
 
-RUN DJANGO_SETTINGS_MODULE="config.settings.test"
+RUN DJANGO_SETTINGS_MODULE="config.settings.production"
 
 ENTRYPOINT ["/entrypoint"]
 CMD ["/start"]
