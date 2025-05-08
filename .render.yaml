@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: woodsta-app
+    env: docker
+    dockerfilePath: compose/production/django/Dockerfile
+    plan: free
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: config.settings.production
+      - key: SECRET_KEY
+        value: a4d29eb671f4c32cf8403f09b1df29fd7a8e0d1ae8c315d2e2aab15a3d82b2ef
+      - key: DATABASE_URL
+        value: postgresql://daphne_db_9fsq_user:IhcB9o6tCt5AkXRrgjhAnGaOOjC37b7z@dpg-d052m1pr0fns73d0aq50-a/daphne_db_9fsq
+      - key: ALLOWED_HOSTS
+        value: woodsta.onrender.com
