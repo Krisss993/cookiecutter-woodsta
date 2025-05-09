@@ -24,3 +24,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   elements.forEach(el => observer.observe(el));
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector("form");
+  if (form) {
+    form.addEventListener("submit", () => {
+      alert("Dziękujemy za wiadomość!");
+    });
+  }
+});

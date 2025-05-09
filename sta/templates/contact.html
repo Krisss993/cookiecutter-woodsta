@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Kontakt | sta{% endblock %}
+
+{% block content %}
+<div class="container mt-5 contact-form">
+  <h2 class="text-center mb-4">Skontaktuj się z nami</h2>
+  <form method="post" novalidate>
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    <div class="mb-3">
+      {{ form.name.label_tag }} {{ form.name }}
+    </div>
+    <div class="mb-3">
+      {{ form.email.label_tag }} {{ form.email }}
+    </div>
+    <div class="mb-3">
+      {{ form.message.label_tag }} {{ form.message }}
+    </div>
+    <button type="submit" class="btn btn-success">Wyślij</button>
+  </form>
+</div>
+{% endblock %}
