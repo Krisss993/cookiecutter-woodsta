@@ -1,3 +1,33 @@
 {% extends "base.html" %}
 
+{% block title %}Strona Główna | sta{% endblock %}
 
+{% block content %}
+  <section class="hero-section text-center">
+    <h1>Twój Wymiar, Nasz Projekt</h1>
+    <p class="lead">
+      Specjalizujemy się w projektowaniu i montażu nowoczesnych mebli, kuchni oraz szaf na wymiar.
+    </p>
+  </section>
+
+  <section class="services-section container mt-5">
+    <div class="row text-center">
+      <div class="col-md-4">
+        <h3>Projektowanie</h3>
+        <p>Tworzymy indywidualne projekty dopasowane do Twoich potrzeb i przestrzeni.</p>
+      </div>
+      <div class="col-md-4">
+        <h3>Montaż</h3>
+        <p>Profesjonalny montaż mebli z dbałością o każdy detal.</p>
+      </div>
+      <div class="col-md-4">
+        <h3>Wysoka jakość</h3>
+        <p>Używamy materiałów renomowanych producentów oraz nowoczesnych technologii.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section text-center mt-5">
+    <a href="{% url 'account_signup' %}" class="btn btn-primary btn-lg">Zamów wycenę</a>
+  </section>
+{% endblock content %}

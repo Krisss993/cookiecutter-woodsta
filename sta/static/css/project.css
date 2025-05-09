@@ -11,3 +11,51 @@
   background-color: #f2dede;
   border-color: #eed3d7;
 }
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, #f7f7f7, #e0e0e0);
+  padding: 4rem 2rem;
+  border-radius: 12px;
+  margin-top: 2rem;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  color: #2c3e50;
+}
+
+.hero-section .lead {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.services-section h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.cta-section {
+  padding: 2rem;
+}
+
+.cta-section .btn {
+  padding: 0.75rem 2rem;
+  font-size: 1.2rem;
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.hero-section,
+.services-section,
+.cta-section {
+  opacity: 0;
+  transform: translateY(20px);
+}
