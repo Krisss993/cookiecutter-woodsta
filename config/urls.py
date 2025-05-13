@@ -21,7 +21,7 @@ urlpatterns = [
     path("users/", include("sta.users.urls", namespace="users")),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
-    #path("contact/", contact_view, name="contact_form"),
+    path('', include('sta.urls')),
     # Media files
     *static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT),
 ]

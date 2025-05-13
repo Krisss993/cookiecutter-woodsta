@@ -14,7 +14,7 @@ module.exports = {
       __dirname,
       '../sta/static/webpack_bundles/',
     ),
-    publicPath: '/static/webpack_bundles/',
+    publicPath: 'http://localhost:3000/static/webpack_bundles/',
     filename: 'js/[name]-[fullhash].js',
     chunkFilename: 'js/[name]-[hash].js',
   },

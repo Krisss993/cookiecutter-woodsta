@@ -7,14 +7,15 @@ from pathlib import Path
 import environ
 
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
+
 # sta/
 APPS_DIR = BASE_DIR / "sta"
 env = environ.Env()
 
-READ_DOT_ENV_FILE = env.bool("DJANGO_READ_DOT_ENV_FILE", default=False)
-if READ_DOT_ENV_FILE:
-    # OS environment variables take precedence over variables from .env
-    env.read_env(str(BASE_DIR / ".env"))
+# Always try to read the .env file if it exists — useful in local dev
+ENV_FILE = BASE_DIR / ".env"
+if ENV_FILE.exists():
+    env.read_env(str(ENV_FILE))
 
 # GENERAL
 # ------------------------------------------------------------------------------
@@ -285,6 +286,9 @@ SOCIALACCOUNT_FORMS = {"signup": "sta.users.forms.UserSocialSignupForm"}
 # ------------------------------------------------------------------------------
 WEBPACK_LOADER = {
     "DEFAULT": {
+
+        #local
+        'BUNDLE_DIR_NAME': 'static/webpack_bundles/',
         "CACHE": not DEBUG,
         "STATS_FILE": BASE_DIR / "webpack-stats.json",
         "POLL_INTERVAL": 0.1,

@@ -30,9 +30,18 @@ CACHES = {
 # EMAIL
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-host
-EMAIL_HOST = env("EMAIL_HOST", default="mailpit")
+# EMAIL_HOST = env("EMAIL_HOST", default="mailpit")
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-port
-EMAIL_PORT = 1025
+# EMAIL_PORT = 1025
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'twoj_email@gmail.com'
+EMAIL_HOST_PASSWORD = 'twoje_haslo'
+DEFAULT_FROM_EMAIL = 'twoj_email@gmail.com'
+CONTACT_EMAIL = 'adres_docelowy@firma.pl'
 
 # WhiteNoise
 # ------------------------------------------------------------------------------

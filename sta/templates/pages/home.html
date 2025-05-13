@@ -1,17 +1,23 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}Strona Główna | sta{% endblock %}
 
 {% block content %}
-  <section class="hero-section text-center">
+<section class="hero-section text-center">
+  <img src="{% static 'images/hero-bg.jpg' %}" alt="Montaż mebli"
+       class="img-fluid hero-image">
+
+  <div class="hero-text mt-4">
     <h1>Twój Wymiar, Nasz Projekt</h1>
     <p class="lead">
       Specjalizujemy się w projektowaniu i montażu nowoczesnych mebli, kuchni oraz szaf na wymiar.
-Nasze projekty łączą funkcjonalność z estetyką, tworząc przestrzenie, które odzwierciedlają Twój styl życia i potrzeby. 
-Współpracujemy z Tobą na każdym etapie, aby zapewnić satysfakcję i wyjątkowy efekt końcowy.
- Niezależnie od wielkości pomieszczenia – zawsze dopasujemy rozwiązanie idealne dla Ciebie.
+      Nasze projekty łączą funkcjonalność z estetyką, tworząc przestrzenie, które odzwierciedlają Twój styl życia i potrzeby. 
+      Współpracujemy z Tobą na każdym etapie, aby zapewnić satysfakcję i wyjątkowy efekt końcowy.
+      Niezależnie od wielkości pomieszczenia – zawsze dopasujemy rozwiązanie idealne dla Ciebie.
     </p>
-  </section>
+  </div>
+</section>
 
   <section class="services-section container mt-5">
     <div class="row text-center">
@@ -25,7 +31,7 @@ możesz zobaczyć swój projekt jeszcze przed realizacją, co pozwala idealnie d
       <div class="col-md-4">
         <h3>Montaż</h3>
         <p>Profesjonalny montaż mebli z dbałością o każdy detal.
-Zespół naszych monterów to wykwalifikowani fachowcy, którzy dbają o precyzyjne i bezpieczne wykonanie każdej realizacji. 
+Dbamy o precyzyjne i bezpieczne wykonanie każdej realizacji. 
 Pracujemy szybko, czysto i punktualnie, pozostawiając po sobie gotowe do użytku wnętrze bez bałaganu. 
 Zadowolenie klienta to dla nas priorytet.</p>
       </div>
@@ -39,6 +45,26 @@ aby zapewnić długowieczność naszych produktów. Ciągłe doskonalenie naszyc
   </section>
 
   <section class="cta-section text-center mt-5">
-    <a href="{% url 'account_signup' %}" class="btn btn-primary btn-lg">Zamów wycenę</a>
-  </section>
+  <h2>Skontaktuj się z nami</h2>
+  <form method="post" action="{% url 'send_email' %}" class="mt-4" style="max-width: 600px; margin: 0 auto;">
+    {% csrf_token %}
+    <div class="mb-3 text-start">
+      <label for="name" class="form-label">Imię i nazwisko</label>
+      <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="mb-3 text-start">
+      <label for="email" class="form-label">Adres email</label>
+      <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <div class="mb-3 text-start">
+      <label for="subject" class="form-label">Temat</label>
+      <input type="text" class="form-control" id="subject" name="subject" required>
+    </div>
+    <div class="mb-3 text-start">
+      <label for="message" class="form-label">Wiadomość</label>
+      <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg">Wyślij</button>
+  </form>
+</section>
 {% endblock content %}

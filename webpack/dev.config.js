@@ -6,10 +6,17 @@ module.exports = merge(commonConfig, {
   devtool: 'inline-source-map',
   devServer: {
     port: 3000,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': '*',
+    },
+    devMiddleware: {
+      publicPath: '/static/webpack_bundles/',
+    },
     proxy: [
       {
         context: ['/'],
-        target: 'http://django:8000',
+        target: 'http://localhost:8000',
       },
     ],
     client: {

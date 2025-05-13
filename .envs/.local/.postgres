@@ -5,3 +5,4 @@ POSTGRES_PORT=5432
 POSTGRES_DB=sta
 POSTGRES_USER=sSlzpwusxYpKPjCAlePiJcqBzMwrIrRt
 POSTGRES_PASSWORD=HmlSI643Rr0rpA4mAVgST7a8wkGKlgifE0hsPcmQKg2NztKh29BKZdGG3INCzdtx
+DATABASE_URL=postgres://postgres:admin@localhost:5432/mydatabase
