@@ -1,0 +1,146 @@
+@import 'custom_bootstrap_vars';
+@import '~bootstrap/scss/bootstrap';
+
+// project specific CSS goes here
+
+///////////////
+// Variables //
+///////////////
+
+// Alert colors
+
+$white: #fff;
+$mint-green: #d6e9c6;
+$black: #000;
+$pink: #f2dede;
+$dark-pink: #eed3d7;
+$red: #b94a48;
+
+////////////
+// Alerts //
+////////////
+
+// bootstrap alert CSS, translated to the django-standard levels of
+// debug, info, success, warning, error
+
+.alert-debug {
+  background-color: $white;
+  border-color: $mint-green;
+  color: $black;
+}
+
+.alert-error {
+  background-color: $pink;
+  border-color: $dark-pink;
+  color: $red;
+}
+
+.top-bar {
+  background: linear-gradient(to right, #000000, #48260e);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+  position: fixed;     /* Sprawia, że pasek jest "przyklejony" do góry ekranu */
+  top: 0;              /* Ustawia pasek na samej górze */
+  left: 0;             /* Ustawia pasek na samej lewej krawędzi */
+  width: 100%;         /* Sprawia, że pasek rozciąga się na całą szerokość ekranu */
+  z-index: 999;        /* Zapewnia, że pasek będzie na wierzchu innych elementów */
+}
+
+.top-bar-content {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar .logo img {
+  height: 40px;
+  width: auto;
+}
+
+.top-bar .contact-info {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 0.2rem;
+}
+
+
+/* Navbar styling */
+.navbar {
+  background: linear-gradient(to right, #000000, #48260e);
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: center;  /* Wyśrodkowanie poziome */
+  align-items: center;      /* Wyśrodkowanie pionowe */
+}
+
+.navbar .navbar-nav {
+  display: flex;           /* Ustawienie elementów navbar na elastyczne */
+  justify-content: center; /* Wyśrodkowanie odnośników poziomo */
+  width: 100%;
+  align-items: center;
+  gap: 1rem;               /* Pełna szerokość, aby zapewnić wyśrodkowanie */
+  padding-left: 0;         /* Usuwamy domyślny padding */
+  margin: 0;               /* Usuwamy margines */
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand {
+  color: white;
+  transition: color 0.3s ease-in-out;
+  font-weight: 500;
+  font-size: 1.5rem;
+  padding: 0.75rem 1rem;
+}
+
+.navbar .nav-link:hover {
+  color: #ffd700 !important;
+}
+
+.navbar-brand img {
+  height: 40px;
+  width: auto;
+}
+
+
+@media (max-width: 768px) {
+  .top-bar-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .top-bar .contact-info {
+    align-items: center;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Ustawia navbar w kolumnie na urządzeniach mobilnych */
+    align-items: center;
+  }
+
+  .navbar .navbar-nav {
+    flex-direction: column; /* Ustawia odnośniki w kolumnie */
+  }
+
+  .navbar .nav-link {
+    padding: 0.5rem 1rem; /* Dostosowanie paddingu na małych ekranach */
+  }
+}
+
+/* Dodanie marginesu górnego do navbar, aby nie nachodził na top-bar */
+.navbar {
+  margin-top: 50px; /* Dostosuj wartość w zależności od wysokości top-bar */
+}

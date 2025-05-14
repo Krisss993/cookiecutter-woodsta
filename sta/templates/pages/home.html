@@ -45,7 +45,7 @@ aby zapewnić długowieczność naszych produktów. Ciągłe doskonalenie naszyc
   </section>
 
   <section class="cta-section text-center mt-5">
-  <h2>Skontaktuj się z nami</h2>
+  <h2>Zapytaj o wycenę</h2>
   <form method="post" action="{% url 'send_email' %}" class="mt-4" style="max-width: 600px; margin: 0 auto;">
     {% csrf_token %}
     <div class="mb-3 text-start">
@@ -57,11 +57,15 @@ aby zapewnić długowieczność naszych produktów. Ciągłe doskonalenie naszyc
       <input type="email" class="form-control" id="email" name="email" required>
     </div>
     <div class="mb-3 text-start">
+      <label for="phone" class="form-label">Numer telefonu (opcjonalnie)</label>
+      <input type="text" class="form-control" id="phone" name="phone">
+    </div>
+    <div class="mb-3 text-start">
       <label for="subject" class="form-label">Temat</label>
       <input type="text" class="form-control" id="subject" name="subject" required>
     </div>
     <div class="mb-3 text-start">
-      <label for="message" class="form-label">Wiadomość</label>
+      <label for="message" class="form-label">Opisz zapytanie</label>
       <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
     </div>
     <button type="submit" class="btn btn-primary btn-lg">Wyślij</button>
